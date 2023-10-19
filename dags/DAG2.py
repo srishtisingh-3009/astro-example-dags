@@ -18,12 +18,10 @@ with DAG(
             task_id='Dag2',
             python_callable=func
         )
-  
-  trigger_dependent_dag = TriggerDagRunOperator(
+    trigger_dependent_dag = TriggerDagRunOperator(
         task_id="trigger_dependent_dag",
         trigger_dag_id="DAG1",
-        wait_for_completion=True
-    )
+        wait_for_completion=True)
 		
     end_task = DummyOperator(task_id='end_task', dag=dag)
 
