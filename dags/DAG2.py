@@ -4,6 +4,7 @@ from time import time_ns
 from datetime import datetime
 from airflow.models.connection import Connection
 from airflow.operators.dummy import DummyOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.python_operator import PythonOperator
 
 def func():
