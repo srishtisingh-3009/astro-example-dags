@@ -14,7 +14,7 @@ with DAG(
     t_external_task_sensor1 = ExternalTaskSensor(
         task_id="parent_task_sensor11",
         external_dag_id="DAG1",
-        external_task_id="task_1",
+        external_task_id="Dag1",
         allowed_states=["success"],
         failed_states=["failed", "skipped"]
     )
@@ -22,7 +22,7 @@ with DAG(
     t_external_task_sensor2 = ExternalTaskSensor(
         task_id="parent_task_sensor12",
         external_dag_id="DAG1",
-        external_task_id="task_1",
+        external_task_id="Dag1",
         allowed_states=["success"],
         failed_states=["failed", "skipped"]
     )
@@ -32,9 +32,9 @@ with DAG(
         doc_md="""Dummy End Task"""
     )
 
-    t_start >> [t_external_task_sensor1,t_external_task_sensor2]
-    task_1 >> t_external_task_sensor1
-    task_1 >> t_external_task_sensor2
-    [t_external_task_sensor1,t_external_task_sensor2] >> t_end
+    t_start >> [t_external_task_sensor1,t_external_task_sensor2] >> t_end
+    #task_1 >> t_external_task_sensor1
+    #task_1 >> t_external_task_sensor2
+    #[t_external_task_sensor1,t_external_task_sensor2] >> t_end
     
     
