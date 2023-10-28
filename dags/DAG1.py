@@ -8,7 +8,7 @@ from airflow.operators.python_operator import PythonOperator
 
 def func():
     print("DAG1 is running")
-	
+
 with DAG(
     dag_id="DAG1", schedule="*/2 * * * *", start_date=datetime(2023, 1, 1), is_paused_upon_creation=False, catchup=False
 ) as dag:
