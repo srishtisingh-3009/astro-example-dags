@@ -6,7 +6,6 @@ from airflow.sensors.external_task import ExternalTaskMarker, ExternalTaskSensor
 with DAG(
     dag_id="external_task_sensor_dag", schedule="*/2 * * * *", start_date=datetime(2023, 1, 1), is_paused_upon_creation=False, catchup=False
 ) as dag:
-    
     t_start = EmptyOperator(
         task_id='Start',
         doc_md="""Dummy Start Task"""
