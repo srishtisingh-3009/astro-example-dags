@@ -11,7 +11,6 @@ with DAG(
         task_id='Start',
         doc_md="""Dummy Start Task"""
     )
-
     t_external_task_sensor1 = ExternalTaskSensor(
         task_id="parent_task_sensor11",
         external_dag_id="DAG1",
