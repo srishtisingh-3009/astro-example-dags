@@ -13,7 +13,7 @@ with DAG(
     )
 
     t_external_task_sensor1 = ExternalTaskSensor(
-        task_id="parent_task_sensor1",
+        task_id="parent_task_sensor11",
         external_dag_id="DAG1",
         external_task_id="task_1",
         allowed_states=["success"],
@@ -21,7 +21,7 @@ with DAG(
     )
     
     t_external_task_sensor2 = ExternalTaskSensor(
-        task_id="parent_task_sensor1",
+        task_id="parent_task_sensor12",
         external_dag_id="DAG1",
         external_task_id="task_1",
         allowed_states=["success"],
